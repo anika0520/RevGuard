@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: 247 248 250;
+    --surface: 255 255 255;
+    --elevated: 243 245 248;
+    --line: 224 228 235;
+    --fg: 17 24 39;
+    --muted: 82 94 112;
+    --subtle: 122 133 150;
+    --accent: 29 78 216;
+    --accent-soft: 219 234 254;
+    --success: 4 120 87;
+    --warning: 180 83 9;
+    --danger: 185 28 28;
+    --caution: 194 65 12;
+    --shadow: 15 23 42;
+  }
+
+  .dark {
+    --canvas: 12 16 24;
+    --surface: 20 26 36;
+    --elevated: 28 35 47;
+    --line: 42 52 68;
+    --fg: 237 241 247;
+    --muted: 156 167 184;
+    --subtle: 116 128 146;
+    --accent: 96 165 250;
+    --accent-soft: 30 58 95;
+    --success: 52 211 153;
+    --warning: 251 191 36;
+    --danger: 248 113 113;
+    --caution: 251 146 60;
+    --shadow: 0 0 0;
+  }
+
+  * {
+    border-color: rgb(var(--line));
+  }
+
+  body {
+    @apply bg-canvas text-fg antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* A single hairline grid instead of decorative gradients. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: linear-gradient(rgb(var(--line) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.5) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, #000 20%, transparent 75%);
+    opacity: 0.5;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-lg border border-line bg-surface shadow-card;
+  }
+  .field {
+    @apply rounded-md border border-line bg-surface px-3 py-2 text-sm text-fg outline-none transition-colors placeholder:text-subtle focus:border-accent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--line));
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--subtle));
+  background-clip: content-box;
+}
+
+input[type="range"] {
+  accent-color: rgb(var(--accent));
+}
