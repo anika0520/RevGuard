@@ -819,7 +819,7 @@ function SlackPreview({ payload }: { payload: any }) {
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-accent text-xs font-semibold text-white">RG</div>
         <div className="min-w-0 flex-1 space-y-2 text-sm">
           <p className="font-semibold text-fg">
-            Xperi RevGuard <span className="ml-1 rounded bg-elevated px-1 py-px text-2xs uppercase text-muted">APP</span>
+            RevGuard <span className="ml-1 rounded bg-elevated px-1 py-px text-2xs uppercase text-muted">APP</span>
           </p>
           {payload?.blocks?.map((b: any, i: number) => {
             if (b.type === "header") return <p key={i} className="text-base font-bold text-fg">{b.text.text}</p>;

@@ -6,14 +6,14 @@ import { AppShell } from "@/components/layout/AppShell";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Xperi RevGuard",
+  title: "RevGuard",
   icons: {
     icon: "/revguard-logo.png",
     shortcut: "/revguard-.svg",
     apple: "/revguard-logo.png",
   },
   description:
-    "Xperi RevGuard — campaign revenue protection: detect, diagnose, quantify, recommend, act, measure.",
+    "RevGuard — campaign revenue protection: detect, diagnose, quantify, recommend, act, measure.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -22,7 +22,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <main className="mx-auto w-full max-w-[1600px] flex-1 px-6 py-6">{children}</main>
           <footer className="border-t border-line bg-surface">
             <div className="mx-auto flex max-w-[1600px] flex-wrap items-center gap-x-4 gap-y-1 px-6 py-3 text-2xs text-subtle">
-              <span>Xperi RevGuard</span>
+              <span>RevGuard</span>
               <span>·</span>
               <span>Deterministic analytics with an evidence-grounded AI layer</span>
               <span>·</span>

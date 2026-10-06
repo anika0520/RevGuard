@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%" style="background-color: #ffffff; border-radius: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 3px; rx: 12px; }
+      .box-header { fill: #1e293b; rx: 12px; }
+      .text-title { fill: #ffffff; font-size: 18px; font-weight: bold; text-anchor: middle; }
+      .text-body { fill: #334155; font-size: 15px; font-weight: 500; text-anchor: middle; }
+      .text-desc { fill: #64748b; font-size: 13px; text-anchor: middle; }
+      .line { fill: none; stroke: #94a3b8; stroke-width: 3px; stroke-dasharray: 8 6; }
+      
+      @keyframes flowLeftToRight {
+        0% { transform: translateX(0); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateX(150px); opacity: 0; }
+      }
+      @keyframes flowRightToLeft {
+        0% { transform: translateX(150px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateX(0); opacity: 0; }
+      }
+      @keyframes flowTopToBottom {
+        0% { transform: translateY(0); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(60px); opacity: 0; }
+      }
+      
+      .data-packet-1 { animation: flowLeftToRight 2s infinite linear; }
+      .data-packet-2 { animation: flowRightToLeft 2s infinite linear; animation-delay: 1s; }
+      .data-packet-3 { animation: flowLeftToRight 2.5s infinite linear; animation-delay: 0.5s; }
+      .data-packet-4 { animation: flowTopToBottom 2s infinite linear; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="50" fill="#0f172a" font-size="28px" font-weight="bold" text-anchor="middle">RevGuard System Architecture</text>
+  <text x="500" y="75" fill="#64748b" font-size="16px" text-anchor="middle">Real-time data flow between Client, API, and Intelligence layers</text>
+
+  <!-- Lines connecting components -->
+  <!-- Frontend to Backend -->
+  <path class="line" d="M 280 220 L 430 220" />
+  <!-- Backend to AI -->
+  <path class="line" d="M 570 220 L 720 220" />
+  <!-- Backend to Data -->
+  <path class="line" d="M 500 290 L 500 350" />
+
+  <!-- Animated Data Packets (using simple CSS transforms for wider compatibility) -->
+  <g transform="translate(280, 220)">
+    <circle r="6" fill="#10b981" class="data-packet-1" />
+  </g>
+  <g transform="translate(280, 220)">
+    <circle r="6" fill="#3b82f6" class="data-packet-2" />
+  </g>
+  <g transform="translate(570, 220)">
+    <circle r="6" fill="#8b5cf6" class="data-packet-3" />
+  </g>
+  <g transform="translate(500, 290)">
+    <circle r="6" fill="#f59e0b" class="data-packet-4" />
+  </g>
+
+  <!-- 1. Frontend Node -->
+  <rect class="box" x="80" y="150" width="200" height="140" />
+  <path class="box-header" d="M 80 162 Q 80 150 92 150 L 268 150 Q 280 150 280 162 L 280 190 L 80 190 Z" />
+  <text class="text-title" x="180" y="175">Client UI</text>
+  <text class="text-body" x="180" y="225">Next.js 14 App</text>
+  <text class="text-desc" x="180" y="250">Tailwind &amp; Recharts</text>
+  <text class="text-desc" x="180" y="270">Real-time Dashboards</text>
+
+  <!-- 2. Backend Node -->
+  <rect class="box" x="430" y="150" width="140" height="140" />
+  <path class="box-header" d="M 430 162 Q 430 150 442 150 L 558 150 Q 570 150 570 162 L 570 190 L 430 190 Z" />
+  <text class="text-title" x="500" y="175">API Gateway</text>
+  <text class="text-body" x="500" y="225">FastAPI</text>
+  <text class="text-desc" x="500" y="250">Python 3.11</text>
+  <text class="text-desc" x="500" y="270">REST Routes</text>
+
+  <!-- 3. AI Node -->
+  <rect class="box" x="720" y="150" width="200" height="140" />
+  <path class="box-header" d="M 720 162 Q 720 150 732 150 L 908 150 Q 920 150 920 162 L 920 190 L 720 190 Z" />
+  <text class="text-title" x="820" y="175">AI Engine</text>
+  <text class="text-body" x="820" y="225">Diagnostic Layer</text>
+  <text class="text-desc" x="820" y="250">LLM Explanations</text>
+  <text class="text-desc" x="820" y="270">Guardian Copilot Chat</text>
+
+  <!-- 4. Data Analytics Node -->
+  <rect class="box" x="330" y="350" width="340" height="110" />
+  <path class="box-header" d="M 330 362 Q 330 350 342 350 L 658 350 Q 670 350 670 362 L 670 390 L 330 390 Z" />
+  <text class="text-title" x="500" y="375">Analytics &amp; Telemetry</text>
+  <text class="text-body" x="500" y="415">Pandas / Numpy Deterministic Engine</text>
+  <text class="text-desc" x="500" y="440">Calculates deviations &amp; Revenue-at-Risk</text>
+
+</svg>

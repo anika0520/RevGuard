@@ -33,11 +33,11 @@ export function TopNav({ onOpenPalette }: { onOpenPalette: () => void }) {
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <img
             src="/revguard-logo.png"
-            alt="Xperi RevGuard"
+            alt="RevGuard"
             className="h-9 w-9 shrink-0 rounded-md object-cover"
           />
           <span className="whitespace-nowrap text-[15px] font-semibold leading-none tracking-tight text-fg">
-            Xperi <span className="text-accent">RevGuard</span>
+            <span className="text-accent">RevGuard</span>
           </span>
         </Link>
 
